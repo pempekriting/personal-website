@@ -2,7 +2,7 @@
     --color-dark: #36453B;
     --color-medium: #596869;
     --color-light: #515751;
-    --color-lightest: #F5F9E9;
+    --color-lightest: #f5f9e9;
     --color-accent: #C2C1A5;
 }
 
@@ -18,6 +18,36 @@ body {
     color: var(--color-lightest);
     line-height: 1.6;
     min-height: 100vh;
+    font-size: 16px;
+    padding: 20px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    header {
+        transform: translateY(0);
+        transition: none;
+    }
+
+    .section {
+        padding: 10px;
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+    }
 }
 
 h1, h2 {
@@ -83,6 +113,13 @@ header {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
+    padding: 20px;
+}
+
+.timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .section.visible {
@@ -116,8 +153,10 @@ header {
 }
 
 .timeline {
-    position: relative;
-    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 .timeline::before {
@@ -194,6 +233,47 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .timeline-date {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .company-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .company-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+
+    .company-info h3 {
+        font-size: 16px;
+    }
+
+    .company-info p {
+        font-size: 12px;
+    }
+
+    .timeline-item ul {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
     header {
         padding: 2rem 0;
     }
@@ -251,6 +331,7 @@ header p {
 
 .company-info {
     display: flex;
+    flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -261,4 +342,27 @@ header p {
     border-radius: 50%;
     background: linear-gradient(to right, #36453B, #596869, #515751, #F5F9E9, #C2C1A5);
     margin-right: 15px;
+}
+
+.timeline-date {
+    flex: 0 0 100px;
+    margin-right: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.company-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.company-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #f5f9e9;
 }
