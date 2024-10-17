@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Azzam Nizar, seorang QA Engineer yang berpengalaman dalam pengujian otomatisasi dan mentor di Alterra Academy.">
+    <meta name="keywords" content="QA Engineer, Portfolio, Azzam Nizar, Automation Testing, Mentor">
+    <meta name="author" content="Azzam Nizar">
+    <title>CV Online - Azzam Nizar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="container">
+        <div class="profile-img-container">
+            <img src="assets/foto-profil.png" alt="Foto Profil Azzam Nizar" class="profile-img">
+            <i class="fas fa-bug tech-icon" style="top: -20px; left: -20px;" aria-hidden="true"></i>
+            <i class="fas fa-code tech-icon" style="top: 50px; right: -30px;" aria-hidden="true"></i>
+            <i class="fas fa-laptop-code tech-icon" style="bottom: -10px; left: 50px;" aria-hidden="true"></i>
+        </div>
+        <h1>Kgs. Azzam Nizar</h1>
+        <p><b>QA Engineer</b> </p>
+        <p align="justify">Azzam is a QA Engineer at ProSpace, a leading software development company that provides solutions for various clients. 
+            They lead a team of quality assurance professionals to deliver high-quality applications, using their expertise in automation and mobile testing tools such as JavaScript/TypeScript, Jest, Webdriver.io, and K6. 
+            They ensure the software products' functionality, usability, and performance, as well as compliance with the quality standards and client requirements.
+            Azzam also mentors aspiring QA engineers at Alterra Academy, an online platform offering immersive software engineering courses. 
+            They teach and guide them on test design techniques, API testing, and web automation, using Rest Assured, Chai.js, and BrowserStack tools. 
+            They have mentored multiple project capstone teams and provided one-on-one sessions to help them overcome technical and non-technical challenges</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3>Associate's Degree - Politeknik Pos Indonesia</h3>
+                <p>2014 - 2017</p>
+                <p>Grade: 3.51</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Work Experiences</h2>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="company-info">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGlX6Pg8sFZyw/company-logo_200_200/company-logo_200_200/0/1715783974281/prospace8_logo?e=1736985600&v=beta&t=HTLO-hnAbXLnGJDwpRmHaVysy1cJB0hzzLqslBlLhuc" alt="Logo ProSpace Pte Ltd" class="company-logo">
+                        <div>
+                            <h3>QA Engineer - ProSpace Pte Ltd</h3>
+                            <p>Jun 2023 - Present</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
+                            <p><i class="fas fa-briefcase"></i> Remote</p>
+                        </div>
+                    </div>
+                    <h3>Description</h3>
+                    <ul style="padding: 0 30px;">
+                        <li>Led the QA team to ensure all the platforms (web and mobile) achieve the minimum quality products.</li>
+                        <li>Initiate the new tools or best practices for QA Team</li>
+                        <li>Create an automation test project for several products (ProSpace iOS, ProSpace Android, load test API).</li>
+                    </ul>
+                    <h3><b>Tools</b></h3>
+                    <ul style="padding: 0 30px;">
+                        <li>JavaScript, Webdriver.io, K6, Qase.io, BitBucket, Jenkins</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <h3>Software Development Engineer in Test - PT. Kuncie Pintar Nusantara</h3>
+                    <p>Jun 2023 - Present</p>
+                    <h3>Description</h3>
+                    <ul style="padding: 0 30px;">
+                        <li>Led the QA team to ensure all the platforms (web and mobile) achieve the minimum quality products.</li>
+                        <li>Initiate the new tools or best practices for QA Team</li>
+                        <li>Create an automation test project for several products (ProSpace iOS, ProSpace Android, load test API).</li>
+                    </ul>
+                    <h3><b>Tools</b></h3>
+                    <ul style="padding: 0 30px;">
+                        <li>JavaScript, Webdriver.io, K6, Qase.io, BitBucket, Jenkins</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Kontak</h2>
+            <p>Email: email@anda.com</p>
+            <p>Telepon: +62 xxx xxxx xxxx</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-linkedin" aria-label="LinkedIn"></i></a>
+                <a href="#"><i class="fab fa-github" aria-label="GitHub"></i></a>
+                <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope" aria-label="Email"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 Nama Anda. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function checkScroll() {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                var sectionTop = section.getBoundingClientRect().top;
+                var sectionBottom = section.getBoundingClientRect().bottom;
+                var windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.75 && sectionBottom > 0) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                }
+            });
+        }
+
+        function checkTimelineItems() {
+            var items = document.querySelectorAll('.timeline-item');
+            items.forEach(function(item, index) {
+                setTimeout(function() {
+                    var itemTop = item.getBoundingClientRect().top;
+                    var itemBottom = item.getBoundingClientRect().bottom;
+                    var windowHeight = window.innerHeight;
+                    if (itemTop < windowHeight * 0.75 && itemBottom > 0) {
+                        item.classList.add('visible');
+                    } else {
+                        item.classList.remove('visible');
+                    }
+                }, index * 200); // Delay each item by 200ms
+            });
+        }
+
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop) {
+                // Scrolling down
+                document.querySelector('header').style.transform = 'translateY(-50px)';
+                document.querySelector('header').style.transition = 'transform 0.3s ease-out';
+            } else {
+                // Scrolling up
+                document.querySelector('header').style.transform = 'translateY(0)';
+                document.querySelector('header').style.transition = 'transform 0.3s ease-out';
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+            checkScroll();
+            checkTimelineItems();
+        }, false);
+
+        window.addEventListener('load', function() {
+            checkScroll();
+            checkTimelineItems();
+        });
+    </script>
+</body>
+</html>
