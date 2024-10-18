@@ -118,4 +118,3 @@ window.addEventListener('load', function() {
     checkScroll();
     checkTimelineItems();
 });
-
