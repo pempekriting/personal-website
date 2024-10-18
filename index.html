@@ -16,8 +16,10 @@
         <div class="profile-img-container">
             <img src="assets/foto-profil.png" alt="Profile picture" class="profile-img">
             <i class="fas fa-bug tech-icon" style="top: -20px; left: -20px;" aria-hidden="true"></i>
+            <i class="fab fa-github tech-icon" style="top: -20px; right: -20px;" aria-hidden="true"></i>
             <i class="fas fa-code tech-icon" style="top: 50px; right: -30px;" aria-hidden="true"></i>
-            <i class="fas fa-laptop-code tech-icon" style="bottom: -10px; left: 50px;" aria-hidden="true"></i>
+            <i class="fas fa-laptop-code tech-icon" style="bottom: -30px; right: 200px;" aria-hidden="true"></i>
+            <i class="fas fa-desktop tech-icon" style="bottom: -30px; left: 200px;" aria-hidden="true"></i>
         </div>
         <h1>Kgs. Azzam Nizar</h1>
         <p><b>QA Engineer</b> </p>
@@ -93,73 +95,6 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: kgs.azzam@gmail.com</p>
-            <div class="social-media">
-                <a href="#"><i class="fab fa-linkedin" aria-label="LinkedIn"></i></a>
-                <a href="#"><i class="fab fa-github" aria-label="GitHub"></i></a>
-                <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
-                <a href="#"><i class="fas fa-envelope" aria-label="Email"></i></a>
-            </div>
-            <p class="copyright">&copy; 2024 Kgs Azzam Nizar. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function checkScroll() {
-            var sections = document.querySelectorAll('.section');
-            sections.forEach(function(section) {
-                var sectionTop = section.getBoundingClientRect().top;
-                var sectionBottom = section.getBoundingClientRect().bottom;
-                var windowHeight = window.innerHeight;
-                if (sectionTop < windowHeight * 0.75 && sectionBottom > 0) {
-                    section.classList.add('visible');
-                } else {
-                    section.classList.remove('visible');
-                }
-            });
-        }
-
-        function checkTimelineItems() {
-            var items = document.querySelectorAll('.timeline-item');
-            items.forEach(function(item, index) {
-                setTimeout(function() {
-                    var itemTop = item.getBoundingClientRect().top;
-                    var itemBottom = item.getBoundingClientRect().bottom;
-                    var windowHeight = window.innerHeight;
-                    if (itemTop < windowHeight * 0.75 && itemBottom > 0) {
-                        item.classList.add('visible');
-                    } else {
-                        item.classList.remove('visible');
-                    }
-                }, index * 200); // Delay each item by 200ms
-            });
-        }
-
-        let lastScrollTop = 0;
-
-        window.addEventListener('scroll', function() {
-            var st = window.pageYOffset || document.documentElement.scrollTop;
-            if (st > lastScrollTop) {
-                // Scrolling down
-                document.querySelector('header').style.transform = 'translateY(-50px)';
-                document.querySelector('header').style.transition = 'transform 0.3s ease-out';
-            } else {
-                // Scrolling up
-                document.querySelector('header').style.transform = 'translateY(0)';
-                document.querySelector('header').style.transition = 'transform 0.3s ease-out';
-            }
-            lastScrollTop = st <= 0 ? 0 : st;
-            checkScroll();
-            checkTimelineItems();
-        }, false);
-
-        window.addEventListener('load', function() {
-            checkScroll();
-            checkTimelineItems();
-        });
-    </script>
+    <script src="js/style.js"></script>
 </body>
 </html>

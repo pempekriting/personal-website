@@ -366,3 +366,75 @@ header p {
     font-size: 14px;
     color: #f5f9e9;
 }
+  
+  .icon-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #36453B, #596869, #515751, #f5f9e9, #C2C1A5);
+    opacity: 0.3;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .tech-icon {
+    position: absolute;
+    font-size: 24px;
+    color: #f5f9e9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .fa-bug {
+    top: 30%;
+    left: 30%;
+    animation: floatIcon 4s ease-in-out infinite;
+  }
+  
+  .fa-code {
+    top: 50%;
+    left: 50%;
+    animation: floatIcon 5s ease-in-out infinite;
+  }
+  
+  .fa-laptop-code {
+    bottom: 30%;
+    right: 30%;
+    animation: floatIcon 6s ease-in-out infinite;
+  }
+
+  .fa-desktop {
+    bottom: 30%;
+    right: 30%;
+    animation: floatIcon 6s ease-in-out infinite;
+  }
+
+  .fa-github {
+    bottom: 30%;
+    right: 30%;
+    animation: floatIcon 6s ease-in-out infinite;
+  }
+  
+  @keyframes floatIcon {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
