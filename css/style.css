@@ -23,21 +23,6 @@ body {
     margin: 0;
 }
 
-@media only screen and (max-width: 768px) {
-    .fa-bug {
-        left: 30%; top: 10%
-    }
-    .fa-code {
-        top: 100px; right: 80px;
-    }
-    .fa-desktop {
-        top: 35%; right: 80px;
-    }
-    .fa-laptop-code {
-        top: 35%; right: 70%;
-    }
-}
-
 @media (max-width: 768px) {
     body {
         font-size: 14px;
@@ -282,8 +267,8 @@ footer {
     }
 
     .profile-img-container {
-        width: 150px;
-        height: 150px;
+        width: 500px;
+        height: 500px;
     }
 }
 
@@ -423,6 +408,7 @@ header p {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
   }
   
   .profile {
@@ -500,10 +486,20 @@ header p {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
   }
-  
+
   .profile-info {
+    text-align: center;
+    margin-top: 20px;
     flex: 1;
     padding-left: 2rem;
+  }
+  
+  .profile-info h1 {
+    font-size: 24px;
+  }
+  
+  .profile-info h2 {
+    font-size: 18px;
   }
   
   h1 {
@@ -542,6 +538,7 @@ header p {
     height: 60px; /* Tinggi area klik */
     border-radius: 50%; /* Membuat area klik berbentuk lingkaran */
     background-color: rgba(255, 255, 255, 0.1); /* Latar belakang semi-transparan */
+    margin: 0 10px;
   }
   
   .social-links a:hover {
@@ -554,6 +551,7 @@ header p {
   @media (max-width: 768px) {
     .social-links {
       gap: 20px; /* Mengurangi jarak antar icon pada layar kecil */
+      justify-content: flex-start;
     }
   
     .social-links a {
@@ -562,21 +560,32 @@ header p {
       height: 50px; /* Mengurangi tinggi area klik */
     }
   }
-  
+
   @media (max-width: 768px) {
     .header-container {
       flex-direction: column;
       text-align: center;
+      padding-right: 80px;
     }
   
     .profile-img-container {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       margin-bottom: 1rem;
     }
   
     .profile-info {
-      padding-left: 0;
+      text-align: left;
+      margin-top: 0;
+      margin-left: 30px;
+    }
+  
+    .profile-info h1 {
+      font-size: 24px;
+    }
+  
+    .profile-info h2 {
+      font-size: 19px;
     }
   
     h1 {
@@ -610,6 +619,9 @@ header p {
   }
   
   .cv-button {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
     display: inline-block;
     padding: 12px 24px;
     font-size: 18px;
@@ -673,6 +685,7 @@ header p {
   /* Responsivitas untuk perangkat mobile */
   @media (max-width: 768px) {
     .cv-button {
+      width: auto;
       font-size: 16px;
       padding: 10px 20px;
     }
