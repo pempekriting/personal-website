@@ -23,6 +23,21 @@ body {
     margin: 0;
 }
 
+@media only screen and (max-width: 768px) {
+    .fa-bug {
+        left: 30%; top: 10%
+    }
+    .fa-code {
+        top: 100px; right: 80px;
+    }
+    .fa-desktop {
+        top: 35%; right: 80px;
+    }
+    .fa-laptop-code {
+        top: 35%; right: 70%;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 14px;
@@ -71,25 +86,7 @@ header {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease-out;
-}
-
-.profile-img-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 2rem;
-    animation: zoomIn 1s ease-out;
-}
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    object-fit: cover;
-    border: 5px solid var(--color-lightest);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 2;
+    padding: 2rem;
 }
 
 .tech-icon {
@@ -397,36 +394,6 @@ header p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
   
-  .fa-bug {
-    top: 30%;
-    left: 30%;
-    animation: floatIcon 4s ease-in-out infinite;
-  }
-  
-  .fa-code {
-    top: 50%;
-    left: 50%;
-    animation: floatIcon 5s ease-in-out infinite;
-  }
-  
-  .fa-laptop-code {
-    bottom: 30%;
-    right: 30%;
-    animation: floatIcon 6s ease-in-out infinite;
-  }
-
-  .fa-desktop {
-    bottom: 30%;
-    right: 30%;
-    animation: floatIcon 6s ease-in-out infinite;
-  }
-
-  .fa-github {
-    bottom: 30%;
-    right: 30%;
-    animation: floatIcon 6s ease-in-out infinite;
-  }
-  
   @keyframes floatIcon {
     0% {
       transform: translateY(0);
@@ -436,5 +403,250 @@ header p {
     }
     100% {
       transform: translateY(0);
+    }
+  }
+
+  header {
+    background-color: transparent;
+    padding: 40px 0;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .profile-img-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    animation: zoomIn 1s ease-out;
+  }
+  
+  .profile-img {
+    width: 100%;
+    height: 120%;
+    border-radius: 100%;
+    object-fit: cover;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+  
+  .icon-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #36453B, #596869, #515751, #f5f9e9, #C2C1A5);
+    opacity: 0.3;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .tech-icon {
+    position: absolute;
+    font-size: 24px;
+    color: #f5f9e9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes floatIcon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .profile-info {
+    flex: 1;
+    padding-left: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #C2C1A5;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Jarak antar icon */
+    margin-top: 20px; /* Jarak dari paragraf di atasnya */
+  }
+  
+  .social-links a {
+    color: #f5f9e9;
+    font-size: 36px; /* Ukuran icon diperbesar */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Lebar area klik */
+    height: 60px; /* Tinggi area klik */
+    border-radius: 50%; /* Membuat area klik berbentuk lingkaran */
+    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang semi-transparan */
+  }
+  
+  .social-links a:hover {
+    color: #C2C1A5;
+    transform: scale(1.1); /* Efek membesar saat hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Latar belakang lebih terang saat hover */
+  }
+  
+  /* Responsivitas untuk perangkat mobile */
+  @media (max-width: 768px) {
+    .social-links {
+      gap: 20px; /* Mengurangi jarak antar icon pada layar kecil */
+    }
+  
+    .social-links a {
+      font-size: 30px; /* Mengurangi ukuran icon sedikit pada layar kecil */
+      width: 50px; /* Mengurangi lebar area klik */
+      height: 50px; /* Mengurangi tinggi area klik */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-img-container {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1rem;
+    }
+  
+    .profile-info {
+      padding-left: 0;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  #typed-name::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+  }
+
+  .cv-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .cv-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #f5f9e9;
+    background: linear-gradient(45deg, #36453B, #596869, #515751, #6a7153, #6c6b53);
+    background-size: 400% 400%;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cv-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #36453B, #596869, #515751, #f5f9e9, #C2C1A5);
+    background-size: 400% 400%;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cv-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cv-button:hover::before {
+    opacity: 1;
+  }
+  
+  .cv-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .cv-button, .cv-button::before {
+    animation: gradientAnimation 15s ease infinite;
+  }
+  
+  /* Responsivitas untuk perangkat mobile */
+  @media (max-width: 768px) {
+    .cv-button {
+      font-size: 16px;
+      padding: 10px 20px;
     }
   }

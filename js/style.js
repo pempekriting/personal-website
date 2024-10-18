@@ -29,6 +29,59 @@ function checkTimelineItems() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Fungsi untuk efek ketikan
+  function typeWriter(text, i, fnCallback) {
+    if (i < text.length) {
+      document.getElementById("typed-name").innerHTML = text.substring(0, i+1) + '<span aria-hidden="true"></span>';
+      
+      // Kecepatan ketikan (dalam milidetik)
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 100);
+    } else if (typeof fnCallback == 'function') {
+      setTimeout(fnCallback, 700);
+    }
+  }
+
+  // Fungsi untuk menghapus teks
+  function eraseText(text, i, fnCallback) {
+    if (i > 0) {
+      document.getElementById("typed-name").innerHTML = text.substring(0, i-1) + '<span aria-hidden="true"></span>';
+      
+      // Kecepatan penghapusan (dalam milidetik)
+      setTimeout(function() {
+        eraseText(text, i - 1, fnCallback)
+      }, 50);
+    } else if (typeof fnCallback == 'function') {
+      setTimeout(fnCallback, 700);
+    }
+  }
+
+  // Fungsi untuk memulai animasi
+  function startTextAnimation(i) {
+    const names = ['Kgs. Azzam Nizar', 'Azzam'];  // Nama lengkap dan alias
+    
+    if (i < names.length) {
+      typeWriter(names[i], 0, function() {
+        // Tunggu sebentar sebelum menghapus
+        setTimeout(function() {
+          eraseText(names[i], names[i].length, function() {
+            startTextAnimation(i + 1);
+          });
+        }, 2000);
+      });
+    } else {
+      // Mulai lagi dari awal setelah semua nama ditampilkan
+      setTimeout(function() {
+        startTextAnimation(0);
+      }, 1000);
+    }
+  }
+
+  // Mulai animasi
+  startTextAnimation(0);
+
+
     const icons = document.querySelectorAll('.tech-icon');
     
     icons.forEach(icon => {
@@ -65,3 +118,4 @@ window.addEventListener('load', function() {
     checkScroll();
     checkTimelineItems();
 });
+
